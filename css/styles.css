@@ -1,11 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&subset=cyrillic');
 :root {
   --accent-color: #2196f3;
+  --what-we-do-color: #f5f4fa;
   --primary-text-color: #757575;
   --title-text-color: #212121;
   --primary-white-color: #ffffff;
   --secondary-text-color: rgba(255, 255, 255, 0.4);
   --footer-backgroung-color: #2f303a;
+  --people-icons: #afb1b8;
+  --footer-ellipce: #c4c4c4;
 }
 html {
   box-sizing: border-box;
@@ -22,7 +25,21 @@ body {
 *::after {
   box-sizing: inherit;
 }
-
+.big-img {
+  max-width: 1600px;
+  height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: linear-gradient(
+      to right,
+      rgba(47, 48, 58, 0.8),
+      rgba(47, 48, 58, 0.8)
+    ),
+    url('../images/big_img.jpg');
+  background-color: var(--footer-backgroung-color);
+  background-size: cover;
+  background-position: center;
+}
 .container {
   width: 1230px;
   padding-left: 15px;
@@ -43,6 +60,7 @@ body {
   padding-right: 0px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 36px;
 }
 .container-our-proses {
   padding-top: 94px;
@@ -51,6 +69,7 @@ body {
   padding-top: 94px;
   padding-bottom: 94px;
 }
+
 .container-our-clients {
   padding-top: 94px;
   padding-bottom: 107px;
@@ -75,6 +94,7 @@ body {
   margin-right: 31px;
   margin-left: auto;
 }
+
 .color {
   background-color: #f5f4fa;
   padding-top: 92px;
@@ -82,7 +102,17 @@ body {
 .what-we-do:not(:last-child) {
   margin-right: 30px;
 }
-.what-we-do {
+
+.what-we-do-icons {
+  display: flex;
+  background-color: var(--what-we-do-color);
+  height: 120px;
+  border-radius: 4px;
+  align-items: center;
+  justify-content: center;
+}
+
+.icons-margin .what-we-do {
   width: 270px;
 }
 .our-work:not(:last-child) {
@@ -94,13 +124,51 @@ body {
 .card-color {
   background-color: var(--primary-white-color);
   margin-bottom: 92px;
+  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 1px 3px rgba(0, 0, 0, 0.12);
 }
 .portfolio-icons:not(:last-child) {
-  margin-right: 11px;
+  margin-right: 10px;
 }
+.portfolio-icons {
+  display: flex;
+
+  box-sizing: border-box;
+
+  align-items: center;
+  justify-content: center;
+}
+.social-ellipce {
+  display: flex;
+
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--what-we-do-color);
+  margin-right: 0px;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+  fill: var(--people-icons);
+}
+.social-ellipce:hover {
+  background: var(--accent-color);
+  fill: var(--primary-white-color);
+}
+
 .client {
   margin-right: 30px;
+}
+.client-icons-item {
+  display: flex;
   width: 170px;
+  height: 90px;
+  justify-content: center;
+  align-items: center;
+
+  border: 1px solid #afb1b8;
+  border-radius: 4px;
+  fill: currentColor;
 }
 ul {
   list-style: none;
@@ -137,16 +205,29 @@ p {
 }
 .link {
   color: var(--primary-text-color);
-  text-decoration: none;
+  display: flex;
+  align-items: center;
+
+  font-family: Roboto;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
+  text-decoration: none;
 }
 .link:hover {
   color: var(--accent-color);
+  fill: var(--accent-color);
 }
 .link:focus {
+  color: var(--accent-color);
+  fill: var(--accent-color);
+}
+
+.contacts-svg {
+  margin-right: 10px;
+}
+.contacts-svg:hover {
   color: var(--accent-color);
 }
 .white-title {
@@ -158,6 +239,7 @@ p {
   text-transform: uppercase;
   color: var(--primary-white-color);
   background-color: var(--primary-text-color);
+  color: var(--title-text-color);
 }
 
 .proses {
@@ -275,6 +357,8 @@ p {
   width: 370px;
   margin-right: 30px;
   margin-bottom: 30px;
+  box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    0px 1px 1px rgba(0, 0, 0, 0.12);
 }
 .box2-item:nth-child(3n) {
   margin-right: 0px;
@@ -309,6 +393,26 @@ p {
 }
 footer {
   background-color: var(--footer-backgroung-color);
+}
+.footer_ellipse {
+  display: flex;
+
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  margin-right: 0px;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+  fill: var(--primary-white-color);
+}
+.footer_ellipse:hover {
+  background: var(--accent-color);
+  fill: var(--primary-white-color);
+}
+.footer-icons-item {
+  align-items: center;
 }
 .web-studio {
   margin-bottom: 8px;
